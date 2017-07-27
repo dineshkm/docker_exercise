@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: ./nginx
+    image: dc
+    ports:
+      - 80
+    volumes:
+      - /docker/test/html:/usr/share/nginx/html
+  web1:
+    build: ./process
+    image: process
+    volumes:
+      - /docker/test/html:/home/
+  

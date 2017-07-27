@@ -1,0 +1,14 @@
+version: '3'
+services:
+  first:
+    build: ../nginx
+    image: dc1
+    volumes:
+      - /docker/cmp2/html:/root/
+  second:
+    image: nginx
+    ports:
+      - 80
+    volumes:
+      - /docker/cmp2/html:/usr/share/nginx/html
+    
